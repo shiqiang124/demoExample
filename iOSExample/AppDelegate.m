@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
-#import "RootViewController.h"
 #import "DemoPkLoadMoreViewController.h"
 
 @interface AppDelegate ()
@@ -30,7 +29,6 @@
     */
     
     
-    //RootViewController *viewController = [[RootViewController alloc] init];
     DemoPkLoadMoreViewController *pload = [[DemoPkLoadMoreViewController alloc] init];
     
     UINavigationController *v = [[UINavigationController alloc] initWithRootViewController:pload];

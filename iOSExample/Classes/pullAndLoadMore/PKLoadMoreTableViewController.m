@@ -31,6 +31,7 @@ static CGFloat const kPullHeaderHeight  = 65.f;
     [self setAutomaticallyAdjustsScrollViewInsets:NO];//禁止默认加入scrollview inset
     self.tableView.showsHorizontalScrollIndicator = NO;
     self.view.backgroundColor = [UIColor whiteColor];
+    self.tableView.separatorColor = [UIColor clearColor];
     
     self.pkListItems = [[NSMutableArray alloc] init];
     

@@ -16,7 +16,6 @@
 		165697D31AB2CB7A0019F979 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 165697D11AB2CB7A0019F979 /* ViewController.xib */; };
 		16EAFD121AB706330082D420 /* blueArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16EAFD0F1AB706330082D420 /* blueArrow@2x.png */; };
 		16EAFD131AB706330082D420 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16EAFD111AB706330082D420 /* EGORefreshTableHeaderView.m */; };
-		16EAFD161AB70AE80082D420 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16EAFD151AB70AE80082D420 /* RootViewController.m */; };
 		16EAFD191AB70FBF0082D420 /* PKLoadMoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16EAFD181AB70FBF0082D420 /* PKLoadMoreTableViewController.m */; };
 		16EAFD1C1AB8079C0082D420 /* DemoPkLoadMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16EAFD1B1AB8079C0082D420 /* DemoPkLoadMoreViewController.m */; };
 /* End PBXBuildFile section */
@@ -48,8 +47,6 @@
 		16EAFD0F1AB706330082D420 /* blueArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueArrow@2x.png"; sourceTree = "<group>"; };
 		16EAFD101AB706330082D420 /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
 		16EAFD111AB706330082D420 /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
-		16EAFD141AB70AE80082D420 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		16EAFD151AB70AE80082D420 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		16EAFD171AB70FBF0082D420 /* PKLoadMoreTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKLoadMoreTableViewController.h; sourceTree = "<group>"; };
 		16EAFD181AB70FBF0082D420 /* PKLoadMoreTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKLoadMoreTableViewController.m; sourceTree = "<group>"; };
 		16EAFD1A1AB8079C0082D420 /* DemoPkLoadMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoPkLoadMoreViewController.h; sourceTree = "<group>"; };
@@ -153,8 +150,6 @@
 		165697D41AB2DEA60019F979 /* pullAndLoadMore */ = {
 			isa = PBXGroup;
 			children = (
-				16EAFD141AB70AE80082D420 /* RootViewController.h */,
-				16EAFD151AB70AE80082D420 /* RootViewController.m */,
 				16EAFD0E1AB706330082D420 /* RefreshTableHeaderView */,
 				16EAFD171AB70FBF0082D420 /* PKLoadMoreTableViewController.h */,
 				16EAFD181AB70FBF0082D420 /* PKLoadMoreTableViewController.m */,
@@ -280,7 +275,6 @@
 				165697D21AB2CB7A0019F979 /* ViewController.m in Sources */,
 				165697AB1AB292920019F979 /* AppDelegate.m in Sources */,
 				165697A81AB292920019F979 /* main.m in Sources */,
-				16EAFD161AB70AE80082D420 /* RootViewController.m in Sources */,
 				16EAFD191AB70FBF0082D420 /* PKLoadMoreTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
