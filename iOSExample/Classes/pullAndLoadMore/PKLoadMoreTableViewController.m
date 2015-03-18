@@ -32,6 +32,12 @@ static CGFloat const kPullHeaderHeight  = 65.f;
     self.tableView.showsHorizontalScrollIndicator = NO;
     self.view.backgroundColor = [UIColor whiteColor];
     self.tableView.separatorColor = [UIColor clearColor];
+    if(self.pkNumberOfSections==0){
+        self.pkNumberOfSections = 1;//如果没有设置，那么默认1个section
+    }
+    if(!self.pkDelegate){
+        NSLog(@"请设置加载数据的代理回调");
+    }
     
     self.pkListItems = [[NSMutableArray alloc] init];
     
@@ -113,11 +119,11 @@ static CGFloat const kPullHeaderHeight  = 65.f;
         if (cell == nil){
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
             
-            CGFloat cellWidth = CGRectGetWidth(cell.frame);
-            NSLog(@"%f",cellWidth);
+            CGFloat tableWidth = CGRectGetWidth(self.tableView.frame);
+            //NSLog(@"%f",cellWidth);
             
             self.loadMoreView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-            self.loadMoreView.frame = CGRectMake((cellWidth-20)/2, (kLoadMoreHeight-20)/2, 20.0f, 20.0f);
+            self.loadMoreView.center = CGPointMake(tableWidth/2, kLoadMoreHeight/2);
             [self.loadMoreView startAnimating];
             
             [cell.contentView addSubview:self.loadMoreView];
@@ -137,10 +143,12 @@ static CGFloat const kPullHeaderHeight  = 65.f;
 - (void)pkWillRefresh
 {
     self.isLoadingPull = YES;
+    [self.pkDelegate pkDelegateWillRefresh];
 }
 
 - (void)pkWillLoadMore{
     self.isLoadingMore = YES;
+    [self.pkDelegate pkDelegateWillLoadMore];
 }
 
 - (void)pkDidRefresh

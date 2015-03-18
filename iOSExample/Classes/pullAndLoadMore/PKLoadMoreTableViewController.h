@@ -9,6 +9,13 @@
 #import <UIKit/UIKit.h>
 
 
+@protocol PKLoadMoreDelegate<NSObject>
+- (void)pkDelegateWillRefresh;
+- (void)pkDelegateWillLoadMore;
+
+@end
+
+
 @interface PKLoadMoreTableViewController : UITableViewController
 
 @property(nonatomic,assign) BOOL pkCanLoadPull;
@@ -21,9 +28,7 @@
 @property(nonatomic,strong) UIView *pkCustomPullView;//当不能下拉刷新的时候可以自定义顶部view
 
 
-//子类需要重写的方法
-- (void)pkWillRefresh;
-- (void)pkWillLoadMore;
+@property(nonatomic,weak) id <PKLoadMoreDelegate> pkDelegate;
 
 
 //供子类完成请求api后调用的方法,不需要重写
@@ -31,7 +36,7 @@
 - (void)pkDidLoadMore;
 
 
-//可选的调用方法
+//可选的调用方法,
 - (void)pkAutoLoading;
 
 @end

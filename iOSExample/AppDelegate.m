@@ -10,6 +10,7 @@
 #import "ViewController.h"
 #import "DemoPkLoadMoreViewController.h"
 
+#import "FLEXManager.h"
 @interface AppDelegate ()
 
 @end
@@ -36,6 +37,8 @@
     
     
     [self.window makeKeyAndVisible];
+    
+    [[FLEXManager sharedManager] showExplorer];
     
     return YES;
 }

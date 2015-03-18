@@ -8,7 +8,7 @@
 
 #import "DemoPkLoadMoreViewController.h"
 
-@interface DemoPkLoadMoreViewController ()
+@interface DemoPkLoadMoreViewController ()<PKLoadMoreDelegate>
 @property (nonatomic, assign) NSInteger pageIndex;//当前页
 @end
 
@@ -16,16 +16,15 @@
 
 
 - (void)viewDidLoad {
-    self.pkCanLoadMore = YES;
+    self.pkCanLoadMore = NO;
     self.pkCanLoadPull = YES;
-    self.pkNumberOfSections = 1;
+    //self.pkNumberOfSections = 1;
     self.pkInsetTop = -64.f;
     //self.pkCustomPullView=;
+    self.pkDelegate = self;
     
     [super viewDidLoad];
 
-    // Do any additional setup after loading the view.
-    [self pkWillLoadMore];
 }
 
 #pragma mark - UITableViewDataSource
@@ -57,8 +56,7 @@
     return nil;
 }
 #pragma mark - overrite super
--(void) pkWillRefresh {
-    [super pkWillRefresh];
+-(void) pkDelegateWillRefresh {
     
     double delayInSeconds = 1.0;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
@@ -71,8 +69,7 @@
     });
 }
 
--(void) pkWillLoadMore {
-    [super pkWillLoadMore];
+-(void) pkDelegateWillLoadMore {
     
     double delayInSeconds = 1.f;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
