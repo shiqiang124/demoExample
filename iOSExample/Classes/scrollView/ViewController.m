@@ -8,8 +8,9 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
-@property (weak, nonatomic) IBOutlet UIScrollView *myScrollView;
+@interface ViewController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *myTableView;
 
 @end
 
@@ -19,18 +20,57 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    NSLog(@"%@",NSStringFromCGPoint(self.myScrollView.contentOffset));
-    self.myScrollView.contentSize = CGSizeMake(self.myScrollView.frame.size.width, self.myScrollView.frame.size.height);
+    self.myTableView.delegate = self;
+    self.myTableView.dataSource = self;
     
-    self.myScrollView.contentInset = UIEdgeInsetsMake(10, 0, 0, 0);
-    [self.myScrollView setContentOffset:CGPointMake(0, -10)];
-    NSLog(@"%@",NSStringFromCGPoint(self.myScrollView.contentOffset));
+    self.myTableView.backgroundColor = [UIColor blueColor];
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 20;
 }
+
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    // Configure the cell...
+    cell.textLabel.text = [NSString stringWithFormat:@"Row %ld", (long)indexPath.row];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Row %ld", (long)indexPath.row];
+    cell.backgroundColor = [UIColor redColor];
+    
+    return cell;
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    //下拉
+    NSLog(@"y:%f",scrollView.contentOffset.y);
+    NSLog(@"cntSize:%@",NSStringFromCGSize(self.myTableView.contentSize));
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    //松开
+    if (scrollView.contentOffset.y <= - 65.0f) {
+        
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:0.2];
+        scrollView.contentInset = UIEdgeInsetsMake(60.0f, 0.0f, 0.0f, 0.0f);
+        [UIView commitAnimations];
+        
+    }
+    
+}
+
 
 @end

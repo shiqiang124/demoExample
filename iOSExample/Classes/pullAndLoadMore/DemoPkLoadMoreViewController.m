@@ -16,7 +16,7 @@
 
 
 - (void)viewDidLoad {
-    self.pkCanLoadMore = NO;
+    self.pkCanLoadMore = YES;
     self.pkCanLoadPull = YES;
     //self.pkNumberOfSections = 1;
     self.pkInsetTop = -64.f;
@@ -24,6 +24,8 @@
     self.pkDelegate = self;
     
     [super viewDidLoad];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"AutoLoad" style:UIBarButtonItemStyleDone target:self action:@selector(autoLoad)] ;
 
 }
 
@@ -56,7 +58,7 @@
     return nil;
 }
 #pragma mark - overrite super
--(void) pkDelegateWillRefresh {
+- (void)pkDelegateWillRefresh {
     
     double delayInSeconds = 1.0;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
@@ -69,7 +71,7 @@
     });
 }
 
--(void) pkDelegateWillLoadMore {
+- (void)pkDelegateWillLoadMore {
     
     double delayInSeconds = 1.f;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
@@ -87,6 +89,9 @@
         
     });
 }
-
+- (void)autoLoad
+{
+    [self pkAutoLoading];
+}
 
 @end

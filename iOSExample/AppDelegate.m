@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "DemoPkLoadMoreViewController.h"
+#import "DemoPanBackViewController.h"
 
 #import "FLEXManager.h"
 @interface AppDelegate ()
@@ -23,18 +24,27 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    
+    //demo scrollview
     /*
     ViewController *viewController = [[ViewController alloc] init];
     self.window.rootViewController = viewController;
     */
     
     
+    //demo pull & loadmore
+    /*
+    
     DemoPkLoadMoreViewController *pload = [[DemoPkLoadMoreViewController alloc] init];
     
     UINavigationController *v = [[UINavigationController alloc] initWithRootViewController:pload];
     self.window.rootViewController = v;
+    */
     
+    
+    //demo pan back
+    DemoPanBackViewController *panDemo = [[DemoPanBackViewController alloc] init];
+    self.window.rootViewController = panDemo;
+     
     
     [self.window makeKeyAndVisible];
     
