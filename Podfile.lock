@@ -1,10 +1,13 @@
 PODS:
-  - FLEX (2.0.2)
+  - PonyDebugger (0.4.0):
+    - SocketRocket
+  - SocketRocket (0.2.0)
 
 DEPENDENCIES:
-  - FLEX (~> 2.0)
+  - PonyDebugger (~> 0.4.0)
 
 SPEC CHECKSUMS:
-  FLEX: ca8700d0a703cb8828d55d689e7e86841dc51e5a
+  PonyDebugger: 4f43d7c2f67aa5e26ca00ce6983421608a6eca6d
+  SocketRocket: 6c9cfd1592bea82262b4283dcda3a7de166af3b6
 
 COCOAPODS: 0.35.0

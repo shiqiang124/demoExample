@@ -16,6 +16,16 @@
 		165697C21AB292920019F979 /* iOSExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 165697C11AB292920019F979 /* iOSExampleTests.m */; };
 		165697D21AB2CB7A0019F979 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 165697D01AB2CB7A0019F979 /* ViewController.m */; };
 		165697D31AB2CB7A0019F979 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 165697D11AB2CB7A0019F979 /* ViewController.xib */; };
+		16E7FBF91ABF16E40066089F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E7FBF81ABF16E40066089F /* CoreData.framework */; };
+		16E7FBFD1ABF18830066089F /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E7FBFC1ABF18830066089F /* libicucore.dylib */; };
+		16E7FC011ABF188F0066089F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E7FC001ABF188F0066089F /* Security.framework */; };
+		16E7FC031ABF18950066089F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E7FC021ABF18950066089F /* Foundation.framework */; };
+		16E7FC071ABF1B0F0066089F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E7FC061ABF1B0F0066089F /* MobileCoreServices.framework */; };
+		16E7FC091ABF1B1A0066089F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E7FC081ABF1B1A0066089F /* SystemConfiguration.framework */; };
+		16E7FC0B1ABF1B260066089F /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E7FC0A1ABF1B260066089F /* CoreFoundation.framework */; };
+		16E7FC0D1ABF1B320066089F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E7FC0C1ABF1B320066089F /* UIKit.framework */; };
+		16E7FC0F1ABF1B450066089F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E7FC0E1ABF1B450066089F /* CoreGraphics.framework */; };
+		16E7FC101ABF1DE20066089F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E7FBFE1ABF18890066089F /* CFNetwork.framework */; };
 		16EAFD121AB706330082D420 /* blueArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 16EAFD0F1AB706330082D420 /* blueArrow@2x.png */; };
 		16EAFD131AB706330082D420 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16EAFD111AB706330082D420 /* EGORefreshTableHeaderView.m */; };
 		16EAFD191AB70FBF0082D420 /* PKLoadMoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16EAFD181AB70FBF0082D420 /* PKLoadMoreTableViewController.m */; };
@@ -52,6 +62,16 @@
 		165697CF1AB2CB7A0019F979 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		165697D01AB2CB7A0019F979 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		165697D11AB2CB7A0019F979 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		16E7FBF81ABF16E40066089F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		16E7FBFC1ABF18830066089F /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		16E7FBFE1ABF18890066089F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		16E7FC001ABF188F0066089F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		16E7FC021ABF18950066089F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		16E7FC061ABF1B0F0066089F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		16E7FC081ABF1B1A0066089F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		16E7FC0A1ABF1B260066089F /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		16E7FC0C1ABF1B320066089F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		16E7FC0E1ABF1B450066089F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		16EAFD0F1AB706330082D420 /* blueArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueArrow@2x.png"; sourceTree = "<group>"; };
 		16EAFD101AB706330082D420 /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
 		16EAFD111AB706330082D420 /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
@@ -72,6 +92,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16E7FC101ABF1DE20066089F /* CFNetwork.framework in Frameworks */,
+				16E7FC0F1ABF1B450066089F /* CoreGraphics.framework in Frameworks */,
+				16E7FC031ABF18950066089F /* Foundation.framework in Frameworks */,
+				16E7FC0D1ABF1B320066089F /* UIKit.framework in Frameworks */,
+				16E7FC0B1ABF1B260066089F /* CoreFoundation.framework in Frameworks */,
+				16E7FC091ABF1B1A0066089F /* SystemConfiguration.framework in Frameworks */,
+				16E7FC071ABF1B0F0066089F /* MobileCoreServices.framework in Frameworks */,
+				16E7FC011ABF188F0066089F /* Security.framework in Frameworks */,
+				16E7FBFD1ABF18830066089F /* libicucore.dylib in Frameworks */,
+				16E7FBF91ABF16E40066089F /* CoreData.framework in Frameworks */,
 				AB2F146A20D47892822B9B7A /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,6 +233,16 @@
 		432E971E5E4BE5FD85D05F41 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				16E7FC0E1ABF1B450066089F /* CoreGraphics.framework */,
+				16E7FC0C1ABF1B320066089F /* UIKit.framework */,
+				16E7FC0A1ABF1B260066089F /* CoreFoundation.framework */,
+				16E7FC081ABF1B1A0066089F /* SystemConfiguration.framework */,
+				16E7FC061ABF1B0F0066089F /* MobileCoreServices.framework */,
+				16E7FC021ABF18950066089F /* Foundation.framework */,
+				16E7FC001ABF188F0066089F /* Security.framework */,
+				16E7FBFE1ABF18890066089F /* CFNetwork.framework */,
+				16E7FBFC1ABF18830066089F /* libicucore.dylib */,
+				16E7FBF81ABF16E40066089F /* CoreData.framework */,
 				8B8CD8B7C80362CC0098D82E /* libPods.a */,
 			);
 			name = Frameworks;

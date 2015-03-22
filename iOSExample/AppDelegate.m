@@ -11,13 +11,28 @@
 #import "DemoPkLoadMoreViewController.h"
 #import "DemoPanBackViewController.h"
 
-#import "FLEXManager.h"
+//#import "FLEXManager.h"
+#if DEBUG
+#import <PonyDebugger/PonyDebugger.h>
+#endif
+
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
 
+
+#pragma mark - UIApplicationDelegate Methods
+- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    // Crash reporting, logging, debugging
+    [self configurePonyDebugger];
+    
+    
+    
+    return YES;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -30,9 +45,9 @@
     self.window.rootViewController = viewController;
     */
     
-    
-    //demo pull & loadmore
     /*
+    //demo pull & loadmore
+    
     
     DemoPkLoadMoreViewController *pload = [[DemoPkLoadMoreViewController alloc] init];
     
@@ -43,12 +58,13 @@
     
     //demo pan back
     DemoPanBackViewController *panDemo = [[DemoPanBackViewController alloc] init];
-    self.window.rootViewController = panDemo;
+    UINavigationController *v = [[UINavigationController alloc] initWithRootViewController:panDemo];
+    self.window.rootViewController = v;
      
     
     [self.window makeKeyAndVisible];
     
-    [[FLEXManager sharedManager] showExplorer];
+    //[[FLEXManager sharedManager] showExplorer];
     
     return YES;
 }
@@ -73,6 +89,38 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+
+#pragma mark - debugger
+- (void)configurePonyDebugger
+{
+#ifdef DEBUG
+    PDDebugger *debugger = [PDDebugger defaultInstance];
+    
+    // Enable Network debugging, and automatically track network traffic that comes through any classes that NSURLConnectionDelegate methods.
+    [debugger enableNetworkTrafficDebugging];
+    [debugger forwardAllNetworkTraffic];
+    
+    // Enable Core Data debugging, and broadcast the main managed object context.
+    //[debugger enableCoreDataDebugging];
+    //[debugger addManagedObjectContext:self.managedObjectContext withName:@"Twitter Test MOC"];
+    
+    // Enable View Hierarchy debugging. This will swizzle UIView methods to monitor changes in the hierarchy
+    // Choose a few UIView key paths to display as attributes of the dom nodes
+    [debugger enableViewHierarchyDebugging];
+    [debugger setDisplayedViewAttributeKeyPaths:@[@"frame",@"bounds", @"hidden", @"alpha", @"opaque",@"text"]];
+    
+    // Connect to a specific host
+    [debugger connectToURL:[NSURL URLWithString:@"ws://192.168.1.105:9000/device"]];
+    // Or auto connect via bonjour discovery
+    //[debugger autoConnect];
+    // Or to a specific ponyd bonjour service
+    //[debugger autoConnectToBonjourServiceNamed:@"MY PONY"];
+    
+    // Enable remote logging to the DevTools Console via PDLog()/PDLogObjects().
+    //[debugger enableRemoteLogging];
+#endif
 }
 
 @end
